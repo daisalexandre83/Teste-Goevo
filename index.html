@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+  <table class="table table-striped">
+    <tr class="bg-info">
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Telefone</th>
+    </tr>
+    <tbody id="myTable"></tbody>
+  </table>
+  <form method="post" id="formComment" action="">
+    <fieldset>
+        <div class="title">Cadastrar dados</div>  
+        <p>
+            <label class="text" for="ccodigo">Código(obrigatório)</label>
+            <input type="text" class="w3-input w3-border w3-round" id="ccodigo" name="codigo" required>
+        </p>  
+        <p>
+            <label class="text" for="cname">Nome(obrigatório,pelo menos dois caracteres)</label>
+            <input type="text" class="w3-input w3-border w3-round" id="cname" name="nome"  required minlength="2">
+        </p>  
+        <p>
+            <label  class="text"for="cemail">Email(obrigatório)</label>
+            <input type="email" class="w3-input w3-border w3-round" id="cemail" name="email" required>
+        </p>
+        <p>
+            <label class="text" for="ctelefone">Telefone(obrigatório)</label>
+            <input type="text" class="w3-input w3-border w3-round" id="ctelefone" name="telefone" required>
+        </p>
+        <p>
+            <button type="submit" id="btn" class="btn btn-dark">Salvar</button>
+        </p>
+        <div id="msg">
+            <pre></pre>
+        </div>
+    </fieldset>
+  </form>
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+   <script src="script.js"></script>
+</body>
+</html>
