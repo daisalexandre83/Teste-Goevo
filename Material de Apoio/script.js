@@ -1,4 +1,4 @@
-var todos = [];
+/* var todos = [];
 
 function  Todo(name) {
     this.name = name;
@@ -63,4 +63,4 @@ $("#add-todo-form").submit(function (event) {
 
     addNewTodoWithName(name);
     listTodos();
-});
+}); */
