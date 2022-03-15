@@ -23,6 +23,31 @@ function buildTable(data) {
 
 $("#formComment").validate();
 
-/* $(function () {
-    $('.w3-input').savy('load');
-}) */
+let inputElem = document.querySelector('#ccodigo');
+inputElem = document.querySelector('#cname');
+inputElem = document.querySelector('#cemail');
+inputElem = document.querySelector('#ctelefone');
+const form = document.querySelector('#forComment');
+const listElem = document.querySelector('#to-do-list');
+const buttonElem = document.querySelector('#to-do-list button');
+
+aData = JSON.parse(localStorage.getItem('to-do-list')) || [];
+
+function updateList() {
+    listElem.innerHTML = '';
+
+    for (const key in aData) {
+        const li = document.createElement('li');
+
+        const span = document.createElement('span');
+        span.innerText = aData[key];
+
+        const button = document.createElement('button');
+        button.innerText = 'Delete';
+        button.setAttribute('key',key);
+        button.classList.add('delete');
+
+        li.appendChild('span');
+        
+    }
+}
