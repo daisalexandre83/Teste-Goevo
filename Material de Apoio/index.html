@@ -10,15 +10,14 @@
 </head>
 <body>
   <section>
-    <h1>JS to-do-list with LocalStorage</h1>
-    <div>
-      <form action="" id="form">
-        <input type="text" id="input-name">
-        <button type="submit" id="btn-add">Add</button>
-      </form>
-    </div>
-    <ul id="to-do-list"></ul>
-  </section>
-  <script src="script.js"></script>
+    <h1>Local Storage JSON Array Example</h1>
+    <p>Click the 'Push' button to add the value to the array</p>
+    <p>Click the 'Pop' button to remove the first element of the array</p>
+    <input id="input" type="text" placeholder="Type value">
+    <button onclick="pushIt()">Push</button>
+    <button onclick="popIt()">Pop</button>
+    <p id="demo"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

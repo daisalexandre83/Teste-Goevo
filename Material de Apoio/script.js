@@ -1,126 +1,37 @@
-const inputElem = document.querySelector('#input-name');
-const form = document.querySelector('#form');
-const listElem = document.querySelector('#to-do-list');
-const buttonElem = document.querySelector('#to-do-list button');
+var fruits = {
+  queue:
+  [
+    {id: 0, name:'Banana'},
+    {id: 0, name:'Orange'},
+    {id: 0, name:'Apple'},
+    {id: 0, name:'Mango'},
+  ]
+};
 
-const toDoArray = JSON.parse(localStorage.getItem('to-do-list')) || [];
+localStorage.setItem('fruits',JSON.stringify(fruits));
 
-function updateList() {
-  listElem.innerHTML = '';
+outputIt();
 
-  for (const key in toDoArray) {
-    const li = document.createElement('li');
-
-    const span = document.createElement('span');
-    span.innerText = toDoArray[key];
-
-    const button = document.createElement('button');
-    button.innerText = 'Delete';
-    button.setAttribute('key',key);
-    button.classList.add('delete');
-
-    li.appendChild(span);
-    li.appendChild(button);
-    listElem.appendChild(li);
+function outputIt() {
+  var restoredFruits = JSON.parse(localStorage.getItem('fruits'));
+  var outputs ='';
+  for(var i=0; i< restoredFruits.queue.length; i++) {
+    outputs += '<div id=" '+restoredFruits.queue[i].id+'">' + restoredFruits.queue[i].name + '</div>';
   }
-
-  localStorage.setItem('to-do-list',JSON.stringify(toDoArray));
+  document.getElementById("demo").innerHTML = outputs;
 }
-
-function addToList(value) {
-  if(value === '') return;
-
-  toDoArray.push(value);
-
-  updateList();
-  inputElem.value = '';
-  inputElem.focus();
+function popIt() {
+  var restoredFruits = JSON.parse(localStorage.getItem('fruits'));
+  restoredFruits.queue.shift();
+  localStorage.setItem('fruits',JSON.stringify(restoredFruits));
+  outputIt();
 }
+function  pushIt() {
+  var restoredFruits = JSON.parse(localStorage.getItem('fruits'));
 
-function deleteFromList(key) {
-  toDoArray.splice(Number(key),1);
-
-  updateList();
-  inputElem.value = '';
-  inputElem.focus();
+  restoredFruits.queue.push({id: Math.floor(Math.random() * (100 - 1 + 1)) + 1,
+    name: $('input').val()
+  });
+  localStorage.setItem('fruits',JSON.stringify(restoredFruits));
+  outputIt();
 }
-
-form.addEventListener('submit',e =>{
-  e.preventDefault();
-  addToList(inputElem.value);
-});
-
-document.addEventListener('click',e =>{
-  const el = e.target;
-  if (el.classList.contains('delete')) {
-    deleteFromList(el.getAttribute('key'));
-  }
-});
-
-updateList();
-/* var todos = [];
-
-function  Todo(name) {
-    this.name = name;
-    this.completed = false;
-}
-
-function addNewTodoWithName(name){
-    var t = new Todo(name);
-    todos.push(t);
-    saveTodos();
-
-
-
-
-
-
-
-    
-}
-
-function removeTodoAtIndex(index){
-    todos.splice(index,1);
-    saveTodos();
-}
-
-function getTodoAtIndex(index) {
-    return todos[index];
-}
-
-function saveTodos() {
-    var str = JSON.stringify(todos);
-    localStorage.setItem("todos",str);
-}
-
-function getTodos() {
-   var str = localStorage.getItem();
-   todos = JSON.parse(str);
-   if (!todos) {
-       todos = [];
-   } 
-}
-
-getTodos();
-listTodos();
-
-function  listTodos() {
-    var html = "";
-    for (var i in todos) {
-        
-        var todo = todos[i];
-        var name = todo.name;
-        var completed = todo.completed;
-        html += "<li>"+name+"<span>"+completed+"</span></li>";
-    }
-    $("#list-todos").html(html);
-}
-
-$("#add-todo-form").submit(function (event) {
-    event.preventDefault();
-
-    var name = $("#todo-name").val();
-
-    addNewTodoWithName(name);
-    listTodos();
-}); */
