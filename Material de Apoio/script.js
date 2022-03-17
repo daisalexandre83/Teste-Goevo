@@ -2,9 +2,9 @@ var fruits = {
   queue:
   [
     {id: 0, name:'Banana'},
-    {id: 0, name:'Orange'},
-    {id: 0, name:'Apple'},
-    {id: 0, name:'Mango'},
+    {id: 1, name:'Orange'},
+    {id: 2, name:'Apple'},
+    {id: 3, name:'Mango'}
   ]
 };
 
@@ -15,8 +15,8 @@ outputIt();
 function outputIt() {
   var restoredFruits = JSON.parse(localStorage.getItem('fruits'));
   var outputs ='';
-  for(var i=0; i< restoredFruits.queue.length; i++) {
-    outputs += '<div id=" '+restoredFruits.queue[i].id+'">' + restoredFruits.queue[i].name + '</div>';
+  for(var i = 0; i < restoredFruits.queue.length; i++) {
+    outputs += '<div id="'+restoredFruits.queue[i].id+'">' + restoredFruits.queue[i].id+':'+restoredFruits.queue[i].name + '</div>';
   }
   document.getElementById("demo").innerHTML = outputs;
 }
