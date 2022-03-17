@@ -1,11 +1,29 @@
- const aData = [
+ const aData = {
+     queue:[
+        { codigo: '001001',nome:'José da Silva',email:'jose@email.com',telefone: '(11)99901-1234'},
+        { codigo: '001002',nome:'Marcio de Souza',email:'marcio@email.com',telefone: '(11)99902-1234'},
+        { codigo: '001003',nome:'Mauricio da Cruz',email:'mauricio@email.com',telefone: '(11)99903-1234'},
+        { codigo: '001004',nome:'Fabiana Dias',email:'fabiana@email.com',telefone: '(11)99904-1234'} 
+     ]
+ }
+
+ localStorage.setItem('aData',JSON.stringify(aData));
+
+ outputIt();
+
+ function outputIt(){
+     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
+     
+ }
+ 
+/*  const aData = [
     { codigo: '001001',nome:'José da Silva',email:'jose@email.com',telefone: '(11)99901-1234'},
     { codigo: '001002',nome:'Marcio de Souza',email:'marcio@email.com',telefone: '(11)99902-1234'},
     { codigo: '001003',nome:'Mauricio da Cruz',email:'mauricio@email.com',telefone: '(11)99903-1234'},
     { codigo: '001004',nome:'Fabiana Dias',email:'fabiana@email.com',telefone: '(11)99904-1234'},
-]
+] */
 
-buildTable(aData)
+/* buildTable(aData)
 
 function buildTable(data) {
     let table = document.getElementById('myTable')
@@ -50,4 +68,4 @@ function updateList() {
         li.appendChild('span');
         
     }
-}
+} */
