@@ -1,2 +1,2 @@
 # Teste-Goevo
-Exercício utilizando HTML, CSS e Javascript.Onde eu crio uma tabela a partir de um array de objetos em JSON.
+Exercício utilizando HTML, CSS e Javascript: Jquery.Os objetos que estão no array irão aparecer na tela e os inputs do formulário serão salvos e mostrados na tela.
