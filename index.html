@@ -46,11 +46,14 @@
         <ul id="to-do-list"></ul>
     </fieldset>
   </form> -->
-  <section>
+  <section method="post" id="formComment" action="">
     <div class="title">Cadastrar dados</div>  
     <p>
+        <label class="text" for="ccodigo">Código(obrigatório)</label>
         <input class="input" type="text" placeholder="Type value"> 
     </p>
+    <button onclick="pushIt()">Push</button>
+    <p id="demo"></p>
   </section>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <!--script src="http://code.jquery.com/jquery-1.11.1.js"></script-->
