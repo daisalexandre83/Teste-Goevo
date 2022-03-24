@@ -9,18 +9,7 @@
 
  localStorage.setItem('aData',JSON.stringify(aData));
 
- outputIt();
-
- function outputIt(){
-     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
-     var outputs = '';
-     for (var i = 0; i < restoredFruits.queue.length; i++) {
-        outputs += '<div id="'+restoredFruits.queue.codigo+'">' + restoredFruits.queue[i].codigo+':'+restoredFruits.queue[i].nome+':'+restoredFruits.queue[i].email+':'+restoredFruits.queue[i].telefone + '</div>';
-     }
-     document.getElementById('demo').innerHTML = outputs;
- }
-
- $("#formComment").validate();
+ 
  
 /*  const aData = [
     { codigo: '001001',nome:'José da Silva',email:'jose@email.com',telefone: '(11)99901-1234'},
