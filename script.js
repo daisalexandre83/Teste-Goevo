@@ -9,7 +9,33 @@
 
  localStorage.setItem('aData',JSON.stringify(aData));
 
- 
+ outputIt();
+
+ function outputIt() {
+     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
+     var outputs = '';
+     for( var i = 0; i < restoredFruits.queue.length; i++){
+         outputs += '<div id="'+restoredFruits.queue[i].id+'">' +restoredFruits.queue[i].codigo+':'+restoredFruits.queue[i].nome+':'+restoredFruits.queue[i].email+':'+restoredFruits.queue[i].telefone+ '</div>';
+     }
+     document.getElementById('demo').innerHTML=outputs;
+ }
+
+ function pushIt() {
+     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
+     restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val()});
+     localStorage.setItem('aData',JSON.stringify(restoredFruits));
+     outputIt();
+ }
+
+ /* function pushIt() {
+     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
+
+     restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
+     localStorage.setItem('aData',JSON.stringify(restoredFruits));
+     outputIt();
+ } */
+
+
  
 /*  const aData = [
     { codigo: '001001',nome:'José da Silva',email:'jose@email.com',telefone: '(11)99901-1234'},
