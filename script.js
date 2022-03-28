@@ -22,8 +22,9 @@
 
  function pushIt() {
      var restoredFruits = JSON.parse(localStorage.getItem('aData'));
-     restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val()});
+     restoredFruits.queue.push({codigo:$('#ccodigo').val(),nome:$('#cname').val(),email:$('#cemail').val(),telefone:$('#ctelefone').val()});
      localStorage.setItem('aData',JSON.stringify(restoredFruits));
+
      outputIt();
  }
 
