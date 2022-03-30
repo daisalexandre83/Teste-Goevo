@@ -20,13 +20,31 @@
      document.getElementById('demo').innerHTML=outputs;
  }
 
- function pushIt() {
+ /* function pushIt() {
      var restoredFruits = JSON.parse(localStorage.getItem('aData'));
      restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
      localStorage.setItem('aData',JSON.stringify(restoredFruits));
 
      outputIt();
- }
+ } */
+
+ const aData = {
+    queue:
+    [
+      {id: 0, name:'Banana'},
+      {id: 1, name:'Orange'},
+      {id: 2, name:'Apple'},
+      {id: 3, name:'Mango'}
+    ]
+  };
+  
+  document.addEventListener("DOMContendLoaded",function (ev) {
+    
+  })
+  
+  if (localStorage.getItem("November-list")) {
+    aData = JSON.parse(localStorage.getItem("November-list"));
+  }
 
  /* function pushIt() {
      var restoredFruits = JSON.parse(localStorage.getItem('aData'));
