@@ -27,7 +27,7 @@ function popIt() {
   outputIt();
 }
 
- /* function  pushIt() {
+ function  pushIt() {
   var restoredFruits = JSON.parse(localStorage.getItem('fruits'));
 
   restoredFruits.queue.push({id: Math.floor(Math.random() * (100 - 1 + 1)) + 1,
@@ -35,21 +35,6 @@ function popIt() {
   });
   localStorage.setItem('fruits',JSON.stringify(restoredFruits));
   outputIt();
-}  */
-var fruits = {
-  queue:
-  [
-    {id: 0, name:'Banana'},
-    {id: 1, name:'Orange'},
-    {id: 2, name:'Apple'},
-    {id: 3, name:'Mango'}
-  ]
-};
+}  
 
-document.addEventListener("DOMContendLoaded",function (ev) {
-  
-})
 
-if (localStorage.getItem("November-list")) {
-  
-}
