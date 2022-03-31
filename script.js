@@ -28,7 +28,7 @@
      outputIt();
  } */
 
- const aData = {
+  aData = {
     queue:
     [
       {id: 0, name:'Banana'},
@@ -45,6 +45,17 @@
   if (localStorage.getItem("November-list")) {
     aData = JSON.parse(localStorage.getItem("November-list"));
   }
+
+  showList();
+
+document.querySelector("#btnAdd").addEventListener("click",function(ev){
+  ev.preventDefault();
+  var newItem = document.querySelector("#item").value;
+  aData.push(newItem);
+  localStorage.setItem("November-list", JSON.stringify(aData));
+  showList();
+  return false;
+});
 
  /* function pushIt() {
      var restoredFruits = JSON.parse(localStorage.getItem('aData'));
