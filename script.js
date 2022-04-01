@@ -20,42 +20,66 @@
      document.getElementById('demo').innerHTML=outputs;
  }
 
- /* function pushIt() {
+  function pushIt() {
      var restoredFruits = JSON.parse(localStorage.getItem('aData'));
      restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
      localStorage.setItem('aData',JSON.stringify(restoredFruits));
 
      outputIt();
- } */
+ } 
 
-  aData = {
-    queue:
+  /* aData = {
+      queue:
     [
       {id: 0, name:'Banana'},
       {id: 1, name:'Orange'},
       {id: 2, name:'Apple'},
       {id: 3, name:'Mango'}
-    ]
+    ]  
   };
   
-  document.addEventListener("DOMContendLoaded",function (ev) {
+  document.addEventListener("DOMContendLoaded",function(ev) {
+      if (localStorage.getItem("November-list")) {
+        aData = JSON.parse(localStorage.getItem("November-list"));
+      }
     
-  })
-  
-  if (localStorage.getItem("November-list")) {
-    aData = JSON.parse(localStorage.getItem("November-list"));
+      showList();
+
+      document.querySelector("#btnAdd").addEventListener("click", function(ev) {
+          ev.preventDefault();
+          var newItem = document.querySelector("#item").value;
+          aData.push(newItem);
+          localStorage.setItem("November-list",JSON.stringify(aData));
+          showList();
+          return false;
+      });
+
+
+  });
+
+  function removeItem(ev) {
+      var txt = ev.currentTarget.firstChild.nodeValue;
+      for(var i = 0; i < aData.length; i++){
+          if (aData[i] == txt) {
+              aData.splice(i,1);
+          }
+      }
+      localStorage.setItem("November-list",JSON.stringify(aData));
+      showList();
   }
+  
+  function showList() {
+      var output = document.querySelector(".output");
+      output.innerHTML ="";
+      for (var i = 0; i < aData.length; i++) {
+        var  p = document.createElement("p");
+        p.innerHTML = aData[i];
 
-  showList();
-
-document.querySelector("#btnAdd").addEventListener("click",function(ev){
-  ev.preventDefault();
-  var newItem = document.querySelector("#item").value;
-  aData.push(newItem);
-  localStorage.setItem("November-list", JSON.stringify(aData));
-  showList();
-  return false;
-});
+        output.appendChild(p);
+        p.addEventListener("click",removeItem);
+        
+      }
+  } */
 
  /* function pushIt() {
      var restoredFruits = JSON.parse(localStorage.getItem('aData'));
