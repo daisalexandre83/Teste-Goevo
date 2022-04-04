@@ -12,6 +12,7 @@
  outputIt();
 
  function outputIt() {
+     console.log(outputs);
      var saveDate = JSON.parse(localStorage.getItem('aData'));
      var outputs = '';
      for( var i = 0; i < saveDate.queue.length; i++){
@@ -21,7 +22,7 @@
  }
 
   function pushIt() {
-      console.log('daiane');
+    console.log('daiane');
      var saveDate = JSON.parse(localStorage.getItem('aData'));
      saveDate.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
      localStorage.setItem('aData',JSON.stringify(saveDate));
