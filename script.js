@@ -12,19 +12,19 @@
  outputIt();
 
  function outputIt() {
-     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
+     var saveDate = JSON.parse(localStorage.getItem('aData'));
      var outputs = '';
-     for( var i = 0; i < restoredFruits.queue.length; i++){
-         outputs += '<div id="'+restoredFruits.queue[i].id+'">' +restoredFruits.queue[i].codigo+':'+restoredFruits.queue[i].nome+':'+restoredFruits.queue[i].email+':'+restoredFruits.queue[i].telefone+ '</div>';
+     for( var i = 0; i < saveDate.queue.length; i++){
+         outputs += '<div id="'+saveDate.queue[i].id+'">' +saveDate.queue[i].codigo+':'+saveDate.queue[i].nome+':'+saveDate.queue[i].email+':'+saveDate.queue[i].telefone+ '</div>';
      }
-     document.getElementById('demo').innerHTML=outputs;
+     document.getElementById('demo').innerHTML = outputs;
  }
 
   function pushIt() {
-     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
-     restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
-     localStorage.setItem('aData',JSON.stringify(restoredFruits));
-
+      console.log('daiane');
+     var saveDate = JSON.parse(localStorage.getItem('aData'));
+     saveDate.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
+     localStorage.setItem('aData',JSON.stringify(saveDate));
      outputIt();
  } 
 
@@ -82,10 +82,10 @@
   } */
 
  /* function pushIt() {
-     var restoredFruits = JSON.parse(localStorage.getItem('aData'));
+     var saveDate = JSON.parse(localStorage.getItem('aData'));
 
-     restoredFruits.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
-     localStorage.setItem('aData',JSON.stringify(restoredFruits));
+     saveDate.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
+     localStorage.setItem('aData',JSON.stringify(saveDate));
      outputIt();
  } */
 
