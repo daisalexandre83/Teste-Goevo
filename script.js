@@ -8,25 +8,25 @@
  }
 
  localStorage.setItem('aData',JSON.stringify(aData));
+ outputIt();
 
  
  function outputIt() {
-     console.log(outputs);
      var saveDate = JSON.parse(localStorage.getItem('aData'));
      var outputs = '';
      for( var i = 0; i < saveDate.queue.length; i++){
          outputs += '<div id="'+saveDate.queue[i].id+'">' +saveDate.queue[i].codigo+':'+saveDate.queue[i].nome+':'+saveDate.queue[i].email+':'+saveDate.queue[i].telefone+ '</div>';
-     }
+        }
+        console.log(outputs);
      document.getElementById('demo').innerHTML = outputs;
     }
-    outputIt();
 
 
 
   function pushIt() {
     console.log('daiane');
      var saveDate = JSON.parse(localStorage.getItem('aData'));
-     saveDate.queue.push({codigo:$('input').val(),nome:$('input').val(),email:$('input').val(),telefone:$('input').val()});
+     saveDate.queue.push({codigo:$('#ccodigo').val(),nome:$('#cname').val(),email:$('#cemail').val(),telefone:$('#ctelefone').val()});
      localStorage.setItem('aData',JSON.stringify(saveDate));
      outputIt();
  } 
