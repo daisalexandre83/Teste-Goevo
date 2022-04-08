@@ -9,8 +9,7 @@
 
  localStorage.setItem('aData',JSON.stringify(aData));
 
- outputIt();
-
+ 
  function outputIt() {
      console.log(outputs);
      var saveDate = JSON.parse(localStorage.getItem('aData'));
@@ -19,7 +18,10 @@
          outputs += '<div id="'+saveDate.queue[i].id+'">' +saveDate.queue[i].codigo+':'+saveDate.queue[i].nome+':'+saveDate.queue[i].email+':'+saveDate.queue[i].telefone+ '</div>';
      }
      document.getElementById('demo').innerHTML = outputs;
- }
+    }
+    outputIt();
+
+
 
   function pushIt() {
     console.log('daiane');
@@ -28,6 +30,9 @@
      localStorage.setItem('aData',JSON.stringify(saveDate));
      outputIt();
  } 
+
+
+
 
   /* aData = {
       queue:
