@@ -22,11 +22,10 @@
     }
 
 
-
   function pushIt() {
     console.log('daiane');
      var saveDate = JSON.parse(localStorage.getItem('aData'));
-     saveDate.queue.push({codigo:$('#ccodigo').val(),nome:$('#cname').val(),email:$('#cemail').val(),telefone:$('#ctelefone').val()});
+     saveDate.queue.push({codigo:$('ccodigo').val(),nome:$('cname').val(),email:$('cemail').val(),telefone:$('ctelefone').val()});
      localStorage.setItem('aData',JSON.stringify(saveDate));
      outputIt();
  } 
