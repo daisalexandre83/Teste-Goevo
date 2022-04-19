@@ -23,17 +23,17 @@
 
 
   function pushIt(event) {
-    event.preventDefault();
-    console.log('daiane');
      var saveDate = JSON.parse(localStorage.getItem('aData'));
      saveDate.queue.push({codigo:$('#ccodigo').val(),nome:$('#cname').val(),email:$('#cemail').val(),telefone:$('#ctelefone').val()});
      localStorage.setItem('aData',JSON.stringify(saveDate));
      outputIt();
  } 
 
- $("#formComment").validate();
-
-
+ $("#formComment")
+ .submit(function(e) {
+    e.preventDefault();
+})
+.validate();
 
 
   
